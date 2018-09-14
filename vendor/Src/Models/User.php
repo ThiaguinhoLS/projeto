@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 namespace Src\Models;
 use \Src\DB\Sql;
 use \Src\Model;
@@ -55,7 +56,7 @@ class User extends Model {
 
 	public function  get($iduser) {
 		$sql = new Sql();
-		$results = $sql->select("SELECT * FROM tb_users WHERE iduser = :IDUSER", array(
+		$results = $sql->select("SELECT * FROM tb_users u INNER JOIN tb_persons p ON u.iduser = p.idperson", array(
 			":IDUSER" => $iduser,
 		));
 		$this->setData($results[0]);
@@ -80,7 +81,6 @@ class User extends Model {
 
 	public static function getForgot($email) {
 		$sql = new Sql();
-		
 	}
 }
 

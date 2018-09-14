@@ -143,7 +143,7 @@ $app->get("/admin/esqueceu-a-senha", function() {
 });
 
 $app->post("/admin/esqueceu-a-senha", function() {
-	$app->get(),
+	
 });
 
 $app->run();
