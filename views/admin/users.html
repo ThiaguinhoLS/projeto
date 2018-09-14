@@ -1,0 +1,31 @@
+<div class="container">
+	<h2>Página dos usuários</h2>
+	<a href="/admin/users/create" class="btn btn-primary">Cadastrar usuário</a>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Username</th>
+				<th>Password</th>
+				<th>Date Register</th>
+				<th>Administrador</th>
+			</tr>
+		</thead>
+		<tbody>
+			{loop="$users"}
+				<tr>
+					<td>{$value.iduser}</td>
+					<td>{$value.username}</td>
+					<td>{$value.password}</td>
+					<td>{$value.date_register}</td>
+					<td>{if="$value.isadmin == 1"}Sim{else}Não{/if}</td>
+					<td>
+						<a href="/admin/users/{$value.iduser}" class="btn btn-primary">Editar</a>
+						<a href="/admin/users/{$value.iduser}/delete" onclick="return confirm('Confirma ?')" class="btn btn-danger">Excluir</a>
+					</td>
+
+				</tr>
+			{/loop}
+		</tbody>
+	</table>
+</div>

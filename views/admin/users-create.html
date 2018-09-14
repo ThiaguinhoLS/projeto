@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Cadastro</h2>
+<form action="/admin/users/create" method="post">
+  <label for="idnome">Nome</label>
+  <input type="text" name="nome" id="idnome" placeholder="Nome">
+  <label for=iddate">Data de nascimento</label>
+  <input type="date" name="date_bithday" id="iddate" placeholder="Data de nascimento">
+  <label for="idemail">Email</label>
+  <input type="email" name="email" id="idemail" placeholder="Email">
+  <label for="idgender">Sexo</label>
+  <select name="gender" id="idgender" required>
+    <option value="" selected disabled></option>
+    <option value="M">Masculino</option>
+    <option value="F">Feminino</option>
+  </select>
+  <label for="idusername">Usuário</label>
+  <input type="text" name="username" id="idusername" placeholder="Usuário">
+  <label for="idpassword">Senha</label>
+  <input type="password" name="password" id="idpassword" placeholder="Senha">
+  <label for="idconfirm">Confirme a senha</label>
+  <input type="password" name="confirm_password" id="idconfirm" placeholder="Confirme a senha">
+  <button type="submit">Cadastrar</button>
+</form>
+</div>

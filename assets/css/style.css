@@ -1,0 +1,166 @@
+
+@font-face {
+	font-family: fonte;
+	src: url(../fonts/ftltlt.ttf);
+}
+
+.bordas {
+	border-top: 10px solid #2A544B;
+	border-bottom: 10px solid #2A544B;
+}
+
+.dropdown-menu {
+	border-left: 5px solid #2A544B;
+	border-right: 5px solid #2A544B;
+	border-bottom: 5px solid #2A544B;
+}
+
+.dropdown-item {
+	font-family: fonte !important;
+	font-size: 1.3rem;
+	font-weight: bold;
+	color: #867051 !important;
+}
+
+
+
+.position-absolute {
+
+}
+
+.image-logo {
+	margin-left: auto !important;
+    margin-right: auto !important;
+	top: 20px;
+}
+
+.logo {
+	top: 20px;
+	left: 10px;
+	width: 150px;
+	z-index: 2;
+	height: 160px;
+	margin-top: -16px;
+	margin-left: 150px;
+	box-sizing: border-box;
+}
+
+p {
+	font-family: fonte;
+	color: #867051; 
+	font-size: 1.1rem;
+}
+
+footer.rodape {
+	background-color: #2A544A !important;
+}
+
+.carousel-inner > .item > img {
+	
+  }
+
+.carousel-inner {
+
+}
+
+section.footer {
+	border-top: 3px solid #2A544A;
+	border-bottom: 3px solid #2A544A;
+	margin-top: 50px;
+	padding-top: 40px;
+}
+
+.nav-link {
+	font-family: fonte;
+	font-size: 1.3rem;
+	font-weight: bold;
+	color: #867051 !important;
+}
+
+em {
+	font-family: fonte !important;
+	font-weight: bold;
+	font-size: 30px !important;
+	font-style: italic;
+	color: #2A544A !important;
+}
+
+.icon {
+	max-height: 100px !important;
+	max-width: 100px !important;
+}
+
+.social a img {
+	width: 75px;
+	height: 58px;
+	display: inline-block;
+}	
+
+
+section.container-fluid {
+	height: 500px;
+	width: 500px;
+	background-image: url(../img/parallax.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.contato {
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+@media (min-width: 576px) {
+	.logo {
+		
+	}
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+}
+
+.modal-content {
+	margin: auto;
+	display: block;
+}
+
+.img-thumbnail:hover {opacity: 0.5;}
+
+.img-thumbnail {
+	min-height: 200px !important;
+	min-width: 100% !important;
+	margin: 0 !important;
+}
+
+footer p {
+	color: white !important;
+}
+
+.text-center .img-fluid {
+    margin: 0 auto;
+}
+
+button, .btn {
+	font-family: fonte;
+	font-weight: bolder;
+}
+
+@media (min-width: 1200px) {
+	section.container {
+    max-width: 100% !important;
+	}
+}
+
+.form-label-group {
+	font-family: fonte;
+} 
