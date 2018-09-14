@@ -1,5 +1,7 @@
 <?php 
+
 session_start();
+
 require_once("vendor/autoload.php");
 
 define("DIR_ROOT", dirname(__FILE__));
@@ -138,11 +140,10 @@ $app->get("/admin/esqueceu-a-senha", function() {
 		"footer" => true
 	]);
 	$page->setTpl("esqueceu_a_senha");
-
 });
 
 $app->post("/admin/esqueceu-a-senha", function() {
-	
+	$app->get(),
 });
 
 $app->run();
