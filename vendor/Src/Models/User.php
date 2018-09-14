@@ -7,6 +7,7 @@ use \Src\Model;
 class User extends Model {
 
 	const SESSION = "userSession";
+	const SECRET = "Chave_de_seguranca";
 	
 	public static function login($username, $password) {
 		$sql = new Sql();
@@ -56,7 +57,7 @@ class User extends Model {
 
 	public function  get($iduser) {
 		$sql = new Sql();
-		$results = $sql->select("SELECT * FROM tb_users u INNER JOIN tb_persons p ON u.iduser = p.idperson", array(
+		$results = $sql->select("SELECT * FROM tb_users u INNER JOIN tb_persons p ON u.iduser = p.idperson WHERE u.iduser = :IDUSER", array(
 			":IDUSER" => $iduser,
 		));
 		$this->setData($results[0]);
@@ -81,6 +82,28 @@ class User extends Model {
 
 	public static function getForgot($email) {
 		$sql = new Sql();
+		$results = $sql->select("SELECT * FROM tb_persons p INNER JOIN tb_users u ON p.idperson = u.iduser WHERE p.email = :EMAIL", array(":EMAIL" => $email));
+		if (count($results) === 0) {
+			throw new \Exception("Não foi possível o usuário");
+		} else {
+			$data = $results[0];
+			$result = $sql->select("");
+			if (count($result) === 0) {
+				$dataRecovery = $result[0];
+				// Encriptar os dados
+				$code = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_128, User::SECRET, $dataRecovery["idrecovery"], MCRYPT_MODE_ECB));
+				// Link para enviar ao usuário
+				$link = "https://www.vovovegana.com.br/admin/forgot/reset?code=$code";
+				// Seta os dados do usuário no email
+				$mailer = new Mailer($data["email"], $data["name"], "Redefinição de senha - Vovó Vegana", "forgot", array(
+					"name" => $data["name"];
+					"link" => $link
+				));
+				// Envia o email
+				$mailer->send();
+				return $data;
+			}
+		}
 	}
 }
 

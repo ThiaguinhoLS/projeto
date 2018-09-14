@@ -143,7 +143,14 @@ $app->get("/admin/esqueceu-a-senha", function() {
 });
 
 $app->post("/admin/esqueceu-a-senha", function() {
-	
+	$user = User::getForgot($_POST["email"]);
+	header("Location: /admin/forgot/send");
+	exit;
+});
+
+$app->get("/admin/forgor/send", function() {
+	$page = new PageAdmin();
+	$page->setTpl("esqueceu_a_senha_enviado");
 });
 
 $app->run();
